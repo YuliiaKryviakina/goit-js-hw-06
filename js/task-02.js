@@ -10,9 +10,17 @@ const ingredients = [
 const ingredientsList = document.querySelector('#ingredients')
 
 const createIngredList = ingredients => {
+  return ingredients.map(ingredient => {
+    const listItem = document.createElement('li');
+    listItem.textContent = ingredient;
+    listItem.classList.add('item');
 
+    return listItem;
+  });
 }
+const items = createIngredList(ingredients);
+ingredientsList.append(...items);
+console.log(ingredients);
+console.log(ingredientsList);
 
-const firstItem = document.createElement('li');
-firstItem.textContent = 'Potatoes';
-firstItem.classList.add('item');
+
