@@ -18,10 +18,13 @@ const gallery = document.querySelector('.gallery');
 const makeGallery = images 
 .map (
   ({url, alt}) => 
-  '<li><img src = "${image.url}" alt = "${image.alt}" width = "300" height = "auto">/<li>')
+  `<li><img src = '${url}' alt = '${alt}' width = "300" height = "auto"></li>`)
 .join('');   
   
 gallery.insertAdjacentHTML('beforeend', makeGallery);
 
-
+gallery.style.display = 'flex';
+gallery.style.gap = '20px';
+gallery.style.justifyContent = 'center';
+gallery.style.listStyle = 'none';
 
