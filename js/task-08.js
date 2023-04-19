@@ -5,7 +5,15 @@ formLogin.addEventListener('submit', event => {
 
  const formData = {};
  for (const element of formLogin.elements) {
-    if
+    if (element.name) {
+      formData[element.name] = element.value;
+    }
  }
-
-})
+if (formData.email && formData.password) {
+   console.log(formData)
+   formLogin.reset();
+} 
+else {
+   alert ('Заповніть всі поля!');
+}
+});
